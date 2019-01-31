@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Franklin Weather Site</title>
+        <meta name="discription" content="Short description of page.">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <header>
+            <h1>Weather Site Plan</h1>
+        </header>
+        <nav>
+            <a href="#">Home</a>
+        </nav>
+        <main>
+            <h2>Purpose</h2>
+                <p>The purpose of <i><strong>The Weather Site</strong></i> is to give current weather conditions in 3 different ways.  The initial page will give the weather for the current location based on the Geocoding location information from the device.  The second is weather for 3 specific locations accessible through a dedicated link, and the third is weather for any location determined by a search string.</p>
+            
+            <h2>Audience</h2>
+                <p>Primary audience is adults ages 18-30.  Most will be students.  Access to the site will be split between mobile devices and laptops. A secondary audience will be anyone interested in weather.</p>
+
+            <h2>Audience Goals:</h2>
+                <p>College students move around quite a bit so one goal would be to quickly get the weather conditions for their current location as they head off to class or study. They are also often far from their homes so the ability to quickly get the conditions for a specific location is important as well.  The third goal deals with planning for travels...the ability to get weather conditions for any location will help with last minute packing for road trips.</p>
+
+            <h2>Persona</h2>
+                <img src="cool-joe.jpg" alt="Picture of Joe"/>
+                    <ul><li><Strong>Name</Strong>:Joe Cool</li>
+                        <li><strong>Occupation</strong>:Student</li>
+                        <li><strong>Interests</strong>:Traveling, Flying, Play acting,Eating</li>
+                        <li><strong>Motivation</strong>:Joe is not into planning.  His last minute scrambling, whether it is getting to class in the morning or heading out on his latest adventure, has left him unprepared for weather conditions many times (He is tired of sleeping in the rain and snow).  He would like to be more prepared...without having to put much effort into it...or planning.</li>
+                        <li><strong>Environment</strong>:Joe is comfortable using laptops and Mobile devices, he will most often be found on a smart phone however.  Many of the places he frequents do not have great signal…he is often dealing with 3G speeds</li>
+                    </ul>
+            <h2>Content</h2>
+                <p>All weather pages should include location name, current temperature, forecast high, forecast low, current weather descriptor, forecast percentage of precipitation, and current wind speed and direction on small devices and hourly temps should be added on larger screens. The pages of the <strong>Weather Site</strong> will be built in the following order:</p>
+                    <h3>Pages</h3>
+                        <ol><li><strong>Franklin and Greenville</strong> weather for each specific location. The weather for these pages should be pulled from the weather.JSON file that will be provided.</li>
+                            <li><strong>Current:</strong> weather for the current location. Current location should be determined by using the Geolocation API of the browser.  This information should be passed to the National Weather Service (NWS) API to retrieve the current conditions. </li>
+                            <li><strong>Search:</strong> Begins with only a search box, characters entered will cause a list of suggested matches to appear.  Selected location will pull up the weather.</li> 
+                        </ol>
+                    <h3>Styles</h3>
+                    <h3>Branding</h3>
+                        <p>The client provided the following initial concept for a name and logo:</p>
+                        <p><i><strong>The Weather Site</strong></i> The name should be bold & italic</p>
+                        <img src="logo.jpeg" alt= "Picture of Umbrella"/>
+                    <h3>Typography</h3>
+                        <p><strong>Heading Font</strong>: Sansita From Google Fonts</p>
+                        <img src= "sanita-alphabet.jpg" alt= "Example of  Sansita Font"/>
+                        <p><strong>Body Copy Font</strong>Helvetica</p>
+                        <img src="helvetica-alphabet.png" alt="Example of Helvetica Font"/>
+                    <h3>Colors</h3> 
+                        <img src="color-swatches.jpeg" alt="Example of colors"/>
+                    <h3>Elements</h3>
+                        <p>(add title attribute to each anchor)</p>
+                    <h3>Navigation:</h3>
+                        <img src="weather-nav-bar.png" alt="Navagation bar Example"/>
+                    <h3>Opaque rounded content box:</h3>
+                        <img src="weather-tile.png" alt="Example of Rounded box"/>
+                    <ul>
+                        <li>background-color: rgba(200,200,200,.6);</li>
+                        <li>margin: .2em auto;</li>
+                        <li>border: 1px solid;</li>
+                        <li>border-radius: 15px;</li>
+                    </ul>
+                    <h3> Wireframes</h3>
+                        <h2>Small Screen</h2>
+                            <img src="wireframe-small.png" alt="Small screen example"/>
+                        <h2> Large Screen </h2>
+                            <img src="wireframe-large.png" alt="Large screen example"/>
+                    
+        </main>
+        <footer>
+            &copy;2019 Kendrik Robinson
+        </footer>
+    </body>
+</html>
