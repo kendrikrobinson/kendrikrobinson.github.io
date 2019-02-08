@@ -62,6 +62,6 @@ footer{
     font-weight: 600;
 }
 
-#resize{
-    max-height: 50%
+img.resize{
+    max-height: 50%;
 }
