@@ -44,13 +44,14 @@ body{
 nav ul li {
     display: inline-block;
     list-style: none;
+    color:#0e89d5;
 }
 
 nav {
     position: fixed;
     bottom: 0;
     left: 0;
-    color:#0e89d5;
+    
 }
 
 footer{
@@ -68,5 +69,5 @@ img.resize{
 
 div.curWeather{
     position: relative;
-    align-items: center;
+    align-items: center;]
 }
