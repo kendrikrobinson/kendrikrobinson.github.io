@@ -44,7 +44,7 @@ body{
 nav ul li {
     display: inline-block;
     list-style: none;
-    color:#0e89d5;
+     background-color:#0e89d5;
 }
 
 nav {
@@ -56,7 +56,7 @@ nav {
 
 footer{
     margin-bottom: 2em;
-    color:#0e89d5;
+    background-color:#0e89d5;
 }
 
 #site-brand {
