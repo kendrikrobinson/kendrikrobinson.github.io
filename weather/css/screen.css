@@ -45,8 +45,8 @@ nav ul li {
     display: inline-block;
     list-style: none;
      background-color:#0e89d5;
-     padding-inline-end: 20%;
-}
+    width:500px;
+    }
 
 nav {
     position: fixed;
@@ -65,11 +65,4 @@ footer{
     font-weight: 600;
 }
 
-img.resize{
-    max-height: 50%;
-}
 
-div.curWeather{
-    position: relative;
-    align-items: center;
-}
