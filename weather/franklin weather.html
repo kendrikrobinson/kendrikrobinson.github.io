@@ -8,7 +8,7 @@
   <link href="/weather/css/screen.css" rel="stylesheet" type="text/css" media="screen">
  </head>
  <body>
- <header>
+ <header id="page-header">
      <h1>Franklin, ID</h1>
  </header>
     <nav>
@@ -25,7 +25,8 @@
         <li><strong>Elevation:</strong>4968 ft.</li>
         <li><strong>Location:</strong>42.07 N, 111.79W</li>
     </ul>
-<section><strong>Temperature</strong>
+<div id="curWeather">    
+<section id= "temps" ><strong>Temperature</strong>
     <ul>
         <li>Temp:40</li>
         <li>High:64</li>
@@ -34,20 +35,20 @@
     </ul>
 </section>
 
-    <section><strong>Wind</strong>
+    <section id="wind"><strong>Wind</strong>
         <ul>
             <li>Wind:5</li>
             <li>Direction:SW</li>
             <li>Gusts:10-12</li>
         </ul><img src= "images/wind-pointer.png" alt="Picture of wind pointer"/></section>
 
-<section><strong>Rain</strong>
+<section id="summary"class="tile"><strong>Rain</strong>
     <ul>
         <li>Summary:Rain</li>
     </ul>
     <img src="images/rain.jpg" alt="Image of rain"/></section>
-
-<section><strong>Hourly Forcast</strong>
+</div>
+<section id="hourly"><strong>Hourly Forcast</strong>
     <p>41, 41, 41,  41, 41, 41, 42, 44, 44, 46, 49, 51, 55</p>
 </section>
 
