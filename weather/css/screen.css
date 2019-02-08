@@ -45,6 +45,7 @@ nav ul li {
     display: inline-block;
     list-style: none;
      background-color:#0e89d5;
+     padding-inline-end: 20%;
 }
 
 nav {
@@ -70,5 +71,5 @@ img.resize{
 
 div.curWeather{
     position: relative;
-    align-items: center;]
+    align-items: center;
 }
