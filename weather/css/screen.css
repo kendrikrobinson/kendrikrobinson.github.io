@@ -46,7 +46,6 @@ nav ul li {
     display: inline-block;
     list-style: none;
      background-color:#0e89d5;
-    width:500px;
     }
 
 nav {
@@ -66,9 +65,10 @@ footer{
     font-weight: 600;
 }
 
-.rain {
-    width: 250px;
-    height: auto;
+#rain {
+    width: 200px;
+    float: center;
+
 }
 
 
