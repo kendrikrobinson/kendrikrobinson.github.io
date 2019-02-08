@@ -47,7 +47,9 @@ nav ul li {
     list-style: none;
      background-color:#0e89d5;
     }
-
+    #logo{
+        height:92px;
+    }
 nav {
     position: fixed;
     bottom: 0;
@@ -71,9 +73,7 @@ footer{
 
 }
 
-#logo{
-    height:92px;
-}
+
 
 #current{
     font-size: 150%;
