@@ -65,3 +65,8 @@ footer{
 img.resize{
     max-height: 50%;
 }
+
+div.curWeather{
+    position: relative;
+    
+}
