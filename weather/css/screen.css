@@ -42,12 +42,7 @@ body{
         text-align: center;   
 }
 
-nav ul li {
-    display: inline-block;
-    list-style: none;
-     background-color:#0e89d5;
-     text-decoration:none;
-    }
+
 
 #logo{
         float: left;
@@ -58,6 +53,10 @@ nav {
     position: fixed;
     bottom: 0;
     left: 0;
+    display: inline-block;
+    list-style: none;
+     background-color:#0e89d5;
+     text-decoration:none;
     
 }
 
