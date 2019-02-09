@@ -39,8 +39,7 @@ body{
         margin: .2em auto;
         border: 1px solid;
         border-radius: 15px; 
-        text-align: center;  
-        width:50em; 
+        text-align: center;   
 }
 
 
@@ -58,6 +57,7 @@ nav {
     list-style: none;
      background-color:#0e89d5;
      text-decoration:none;
+     width:25em;
     
 }
 
