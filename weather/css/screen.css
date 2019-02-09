@@ -51,14 +51,14 @@ body{
 
 nav {
     position: fixed;
-    bottom: 0;
+    bottom: 5em;
     left: 0;
     display: inline-block;
     list-style: none;
      background-color:#0e89d5;
      text-decoration:none;
      width:25em;
-     align-content: center;
+     
     
 }
 
