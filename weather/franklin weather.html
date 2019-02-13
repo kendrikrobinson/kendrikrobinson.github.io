@@ -1,67 +1,73 @@
 <!doctype html>
 <html lang="en-us">
- <head>
-  <meta charset="UTF-8">
-  <title>Franklin, ID | Weather Site</title>
-  <meta name="description" content="Short Description of the page.">
-  <meta name="viewport" content="width=device-width">
-  <link href="/weather/css/screen.css" rel="stylesheet" type="text/css" media="screen">
- </head>
- <body>
- <header id="page-header">
-     <img id="logo" src= "images/logo.jpeg" alt="Picture of Umbrella"/>
-     <h1 id="site-brand">The Weather Site</h1>
- </header>
- <h1>Franklin Weather</h1>
-    <nav>
-        
-              <p> <a href="#" title="Go to the Weather Site home page">Current</a>
-                <a href="#" title="Search">Search</a>
-                <a href="#" title="Get Weather of Franklin">Franklin</a>
-                <a href="#" title="Get Weather of Greenville">Greenville</a></li>
-            </p>
-        
+
+<head>
+    <meta charset="UTF-8">
+    <title>Franklin, ID | Weather Site</title>
+    <meta name="description" content="Short Description of the page.">
+    <meta name="viewport" content="width=device-width">
+    <link href="/weather/css/screen.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+<body>
+    <header id="page-header">
+        <img id="logo" src="images/logo.jpeg" alt="Picture of Umbrella" />
+        <h1 id="site-brand">The Weather Site</h1>
+    </header>
+    <h1>Franklin Weather</h1>
+    <nav id="page-nav">
+
+        <p> <a href="#" title="Go to the Weather Site home page">Current</a>
+            <a href="#" title="Search">Search</a>
+            <a href="#" title="Get Weather of Franklin">Franklin</a>
+            <a href="#" title="Get Weather of Greenville">Greenville</a>
+        </p>
+
     </nav>
-<main>
-    
+    <main id="page-content">
+        <section>
+            <h1>Franklin, Idaho</h1>
+            <p><strong>Zip:</strong>83237 | <strong>Elevation:</strong>4968 ft. | <strong>Location:</strong>42.07&deg;N,
+                111.79&deg;W</p>
+        </section>
+        <div id="curWeather">
+            <section id="temps" class="tile">
+                <h3><strong>Temperature</strong></h3>
 
-        <p><strong>Zip:</strong>83237 | <strong>Elevation:</strong>4968 ft. | <strong>Location:</strong>42.07 N, 111.79&deg;W</p>
+                <p id="current">40&deg;F</p>
+                <p><span id="high">64&deg;F</span> <span id="low">41&deg;F</span></p>
+                <p>Precip:0&deg;F</p>
 
-        <div id="curWeather">    
-    <section id="temps" class="tile">
-        <h3><strong>Temperature</strong></h3>
-    
-       <p id="current">40&deg;F</p>
-        <p><span id="high">64&deg;F</span> <span id="low">41&deg;F</span></p>
-        <p>Precip:0&deg;F</p>
-    
-    </section>
-</div>
+            </section>
+        </div>
 
-    <section id="wind" class="tile">
-        
-        <strong>Wind</strong>
+        <section id="wind" class="tile">
+
+            <strong>Wind</strong>
             <p>Wind:5</p>
-            <img src= "images/wind-pointer.png" alt="Picture of wind pointer"/>
+            <img src="images/wind-pointer.png" alt="Picture of wind pointer" />
             <p>Direction:SW</p>
             <p>Gusts:10-12</p>
-    </section>
-<section id="summary" class="tile"><strong>Rain</strong>
-    
-        <p>Summary:Rain</p>
-    
-    <img id="rain" src="images/rain.jpg" alt="Image of rain"/>
-</section>
+        </section>
+        <section id="summary" class="tile"><strong>Rain</strong>
 
-<section id="hourly"class="tile"><strong>Hourly Forcast</strong>
-    <p>10am: 41&deg;F | 11am: 41&degF | 12am: 41&deg;F |  1pm: 41&deg;F | 2pm: 41&deg;F | 3pm: 41&deg;F | 4pm: 42&deg;F | 5pm: 44&deg;F | 6pm: 44&deg;F | 7pm: 46&deg;F | 8pm: 49&deg;F | 9pm: 51&deg;F | 10pm: 55&deg;F</p>
-</section>
+            <p>Summary:Rain</p>
+
+            <img id="rain" src="images/rain.jpg" alt="Image of rain" />
+        </section>
+
+        <section id="hourly" class="tile"><strong>Hourly Forcast</strong>
+            <p>10am: 41&deg;F | 11am: 41&degF | 12am: 41&deg;F | 1pm: 41&deg;F | 2pm: 41&deg;F | 3pm: 41&deg;F | 4pm:
+                42&deg;F | 5pm: 44&deg;F | 6pm: 44&deg;F | 7pm: 46&deg;F | 8pm: 49&deg;F | 9pm: 51&deg;F | 10pm:
+                55&deg;F</p>
+        </section>
 
 
-</main>
-   
- <footer>
-     &copy; 2019, The Weather Site
- </footer>
- </body>
+    </main>
+
+    <footer>
+        &copy; 2019, The Weather Site
+    </footer>
+</body>
+
 </html>
