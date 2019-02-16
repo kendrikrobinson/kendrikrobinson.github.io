@@ -14,22 +14,19 @@
         <img id="logo" src="images/logo.jpeg" alt="Picture of Umbrella" />
         <h1 id="site-brand">The Weather Site</h1>
     </header>
-    <h1>Franklin Weather</h1>
     <nav id="page-nav">
-
-        <p> <a href="#" title="Go to the Weather Site home page">Current</a>
+            <a href="#" title="Go to the Weather Site home page">Current</a>
             <a href="#" title="Search">Search</a>
             <a href="#" title="Get Weather of Franklin">Franklin</a>
             <a href="#" title="Get Weather of Greenville">Greenville</a>
-        </p>
-
-    </nav>
+     </nav>
     <main id="page-content">
         <section>
             <h1>Franklin, Idaho</h1>
             <p><strong>Zip:</strong>83237 | <strong>Elevation:</strong>4968 ft. | <strong>Location:</strong>42.07&deg;N,
                 111.79&deg;W</p>
         </section>
+        <section class="flex-container">
         <div id="curWeather">
             <section id="temps" class="tile">
                 <h3><strong>Temperature</strong></h3>
@@ -44,8 +41,9 @@
         <section id="wind" class="tile">
 
             <strong>Wind</strong>
-            <p>Wind:5</p>
+           <div id="mph"> <p>Wind:5</p>
             <img src="images/wind-pointer.png" alt="Picture of wind pointer" />
+        </div>
             <p>Direction:SW</p>
             <p>Gusts:10-12</p>
         </section>
@@ -55,7 +53,7 @@
 
             <img id="rain" src="images/rain.jpg" alt="Image of rain" />
         </section>
-
+</section>
         <section id="hourly" class="tile"><strong>Hourly Forcast</strong>
             <p>10am: 41&deg;F | 11am: 41&degF | 12am: 41&deg;F | 1pm: 41&deg;F | 2pm: 41&deg;F | 3pm: 41&deg;F | 4pm:
                 42&deg;F | 5pm: 44&deg;F | 6pm: 44&deg;F | 7pm: 46&deg;F | 8pm: 49&deg;F | 9pm: 51&deg;F | 10pm:

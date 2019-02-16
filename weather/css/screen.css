@@ -32,39 +32,40 @@ h1,h2,h3,h4,h5,h6{
 body{
     font-size: 20px;
     font-family:  helvetica, verdana, sans-serif;
-    width:500px
+    
 }
 
 .tile{ background-color: rgba(200,200,200,.6);
-        margin: .2em auto;
-        border: 1px solid;
-        border-radius: 15px; 
-        text-align: center;   
+    margin: .2em auto;
+    border: 1px solid;
+    border-radius: 15px; 
+    text-align: center;
+
 }
 
 
 
 #logo{
         float: left;
-        height: 50px;
+        height: 45px;
+        padding-right:1%;
     }
 
 nav {
-    display:flex;
     position: fixed;
     bottom:0;
     left: 0;
     display: inline-block;
     list-style: none;
-     background-color:#0e89d5;
-     text-decoration:none;
-     width:25em;
-     justify-content: space-between;
-
-     
-    
+    background-color:#0e89d5;
+    width:100%;   
 }
 
+nav a{
+    
+    text-decoration: none;
+    color: white;
+}
 footer{
     margin-bottom: 2em;
     background-color:#0e89d5;
@@ -78,11 +79,9 @@ footer{
 
 #rain {
     width: 200px;
-    float: center;
+    align-self: center;
 
 }
-
-
 
 #current{
     font-size: 5em;
@@ -96,3 +95,36 @@ footer{
     color:blue;
 }
 /* Mobile First Rules */
+
+
+
+
+
+
+
+
+
+/* Large Screen Rules */
+@media only screen and (min-width: 700px){
+    nav{position: relative;
+    }
+
+    #page-nav{
+        display:flex;
+        justify-content: space-around;
+        padding-top:25px;
+        padding-bottom:15px;
+    }
+    .tile{
+        padding-right:125px;
+        padding-left:110px;
+    }
+.flex-container{
+
+    display:flex;
+    justify-content: flex-end;
+     }
+#rain{
+    width:325px;
+}
+}
