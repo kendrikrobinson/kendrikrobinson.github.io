@@ -43,7 +43,14 @@ body{
 
 }
 
+.centered{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin: 0px;
+    color:black;
 
+}
 
 #logo{
         float: left;
@@ -120,6 +127,7 @@ footer{
         padding-bottom:15px;
     }
     .tile{
+        
         padding-right:125px;
         padding-left:110px;
     }
