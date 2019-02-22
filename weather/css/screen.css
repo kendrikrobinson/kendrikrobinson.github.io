@@ -43,14 +43,6 @@ body{
 
 }
 
-.centered{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    margin: 0px;
-    color:black;
-
-}
 
 #logo{
         float: left;
@@ -134,9 +126,16 @@ footer{
 .flex-container{
 
     display:flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
      }
 #rain{
-    width:325px;
+    width:200px;
+}
+.mph{
+    position: absolute;
+    top: 87%;
+    left: 45%;
+    margin: 0px;
+    color:black;
 }
 }
