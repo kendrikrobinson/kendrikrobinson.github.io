@@ -11,68 +11,81 @@
 @import url('normalize.css');
 
 /* Section 2 General Rules */
-header{
+header {
     background-color: #0e89d5;
 }
-header h1{
+
+header h1 {
     display: inline;
 }
-html{
+
+html {
     box-sizing: border-box;
 }
 
-*, *before, *:after{
+
+*before,
+*:after {
     box-sizing: inherit;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "sansita", "eurostyle", sans-serif;
 }
 
-body{
+body {
     font-size: 20px;
-    font-family:  helvetica, verdana, sans-serif;
-    
+    font-family: helvetica, verdana, sans-serif;
+    margin: 5px;
+
 }
 
-.tile{ background-color: rgba(200,200,200,.6);
-    margin: .2em auto;
+.tile {
+    background-color: rgba(200, 200, 200, .6);
+    /* margin: .2em auto; */
     border: 1px solid;
-    border-radius: 15px; 
+    border-radius: 15px;
     text-align: center;
 
 }
 
 
-#logo{
-        float: left;
-        height: 45px;
-        padding-right:1%;
-    }
+#logo {
+    float: left;
+    height: 45px;
+    padding-right: 1%;
+}
 
 nav {
     position: fixed;
-    bottom:0;
+    bottom: 0;
     left: 0;
     display: inline-block;
     list-style: none;
-    background-color:#0e89d5;
-    width:100%;   
-}
-#page-nav{
-    display:flex;
-        justify-content: space-around
+    background-color: #0e89d5;
+    width: 100%;
 }
 
-nav a{
-    
+#page-nav {
+    display: flex;
+    justify-content: space-around
+}
+
+nav a {
+
     text-decoration: none;
     color: white;
 }
-footer{
+
+footer {
     margin-bottom: 2em;
-    background-color:#0e89d5;
-    padding:20px;
+    background-color: #0e89d5;
+    padding: 20px;
 }
 
 #site-brand {
@@ -86,56 +99,144 @@ footer{
 
 }
 
-#current{
+#current {
     font-size: 5em;
 }
 
 #high {
-    color:red;
+    color: red;
 }
 
-#low{
-    color:blue;
+#low {
+    color: blue;
 }
+
+#dial {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background: no-repeat center/85%url(/images/wind-pointer.png);
+    z-index: 100;
+    margin: -.6em auto 0;
+    
+    }
+
+#curWeather {
+    background-size: cover;
+}
+
+.n {
+    transform: rotate(0deg)
+}
+
+.ne{
+    transform: rotate(45deg)
+}
+
+.nw{
+    transform: rotate(315deg)
+}
+
+.e {
+    transform: rotate(90deg)
+}
+
+.s {
+    transform: rotate(180deg)
+}
+
+.se{
+    transform: rotate(135deg)
+}
+
+.sw{
+    transform: rotate(225deg)
+}
+.w {
+    transform: rotate(270deg)
+}
+
+
 /* Mobile First Rules */
 
 
+.centered {
+    position: absolute;
+    top: 101%;
+    left: 44%;
+    margin: 0px;
+    color: black;
+}
 
-
-
-
-
+/* The small pictures for the summary */
+.clear {
+    background-image: url("weather/weather-images/clear_400.jpg");
+}
+.rain{
+    background-image: url("/weather/images/rain_400.jpg");
+}
+.fog{
+    background-image: url("/weather/images/fog_400.jpg");    
+}
+.snow{
+    background-image: url("/weather/weather-images/snow_400.jpg");
+}
+.clouds{
+    background-image: url("/weather/images/clouds_400.jpg");
+}
 
 
 /* Large Screen Rules */
-@media only screen and (min-width: 700px){
-    nav{position: relative;
+@media only screen and (min-width: 700px) {
+    nav {
+        position: relative;
     }
 
-    #page-nav{
-        display:flex;
+    #page-nav {
+        display: flex;
         justify-content: space-around;
-        padding-top:25px;
-        padding-bottom:15px;
+        padding-top: 25px;
+        padding-bottom: 15px;
     }
-    .tile{
-        
-        padding-right:125px;
-        padding-left:110px;
-    }
-.flex-container{
 
-    display:flex;
-    justify-content: space-evenly;
-     }
-#rain{
-    width:200px;
+    .tile {
+        padding: 0 125px;
+        
+    }
+
+    .flex-container {
+
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #rain {
+        width: 25px;
+    }
+
+    .centered {
+        position: absolute;
+        top: 55%;
+        left: 47%;
+        margin: 0px;
+        color: black;
+    }
+
 }
-.centered{
-    position: absolute;
-    top: 87%;
-    left: 45%;
-    margin: 0px;
-    color:black;
+
+/* Summary images for the big screen */
+.clear {
+    background-image: url("/weather-images/clear_800.jpg");
 }
+.rain{
+    background-image: url("/weather/images/rain_800.jpg");
+}
+.fog{
+    background-image: url("/weather/images/fog_800.jpg");    
+}
+.snow{
+    background-image: url("../weather-images/snow_800.jpg");
+}
+.clouds{
+    background-image: url("/weather/images/clouds_800.jpg");
 }
