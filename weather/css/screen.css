@@ -94,8 +94,12 @@ footer {
 }
 
 #rain {
-    width: 200px;
+    width: 300px;
+    height: 188px;
+    background-size: contain;
     align-self: center;
+    background-repeat: no-repeat;
+    
 
 }
 
@@ -170,19 +174,19 @@ footer {
 
 /* The small pictures for the summary */
 .clear {
-    background-image: url("weather/weather-images/clear_400.jpg");
+    background-image: url("/weather-images/clear_400.jpg");
 }
 .rain{
-    background-image: url("/weather/images/rain_400.jpg");
+    background-image: url("/weather-images/rain_400.jpg");
 }
 .fog{
-    background-image: url("/weather/images/fog_400.jpg");    
+    background-image: url("/weather-images/fog_400.jpg");    
 }
 .snow{
-    background-image: url("/weather/weather-images/snow_400.jpg");
+    background-image: url("/weather-images/snow_400.jpg");
 }
 .clouds{
-    background-image: url("/weather/images/clouds_400.jpg");
+    background-image: url("/weather-images/clouds_400.jpg");
 }
 
 
@@ -210,9 +214,9 @@ footer {
         justify-content: space-around;
     }
 
-    #rain {
+    /* #rain {
         width: 25px;
-    }
+    } */
 
     .centered {
         position: absolute;
@@ -229,14 +233,14 @@ footer {
     background-image: url("/weather-images/clear_800.jpg");
 }
 .rain{
-    background-image: url("/weather/images/rain_800.jpg");
+    background-image: url("/weather-images/rain_800.jpg");
 }
 .fog{
-    background-image: url("/weather/images/fog_800.jpg");    
+    background-image: url("/weather-images/fog_800.jpg");    
 }
 .snow{
     background-image: url("../weather-images/snow_800.jpg");
 }
 .clouds{
-    background-image: url("/weather/images/clouds_800.jpg");
+    background-image: url("/weather-images/clouds_800.jpg");
 }

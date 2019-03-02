@@ -22,7 +22,7 @@ console.log("Feet: " + feet);
 setElevation(feet);
 
 //Current conditions function
-const condition = getCondition('Snow');
+const condition = getCondition('cloudy');
 changeSummaryImage(condition);
 
 //  This is to calculate the wind chill
