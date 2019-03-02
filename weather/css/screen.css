@@ -51,6 +51,7 @@ body {
     border: 1px solid;
     border-radius: 15px;
     text-align: center;
+    
 
 }
 
@@ -166,8 +167,8 @@ footer {
 
 .centered {
     position: absolute;
-    top: 101%;
-    left: 44%;
+    top: 117%;
+    left: 43%;
     margin: 0px;
     color: black;
 }
@@ -221,7 +222,7 @@ footer {
     .centered {
         position: absolute;
         top: 55%;
-        left: 47%;
+        left: 45%;
         margin: 0px;
         color: black;
     }
