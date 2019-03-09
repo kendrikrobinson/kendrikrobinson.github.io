@@ -17,10 +17,11 @@
     <nav id="page-nav">
         <a href="#" title="Go to the Weather Site home page">Current</a>
         <a href="#" title="Get Weather of Franklin">Franklin</a>
-        <a href="#" title="Get Weather of Greenville">Greenville</a>
+        <a href="/weather/greenville weather.html" title="Get Weather of Greenville">Greenville</a>
         <a href="#" title="Search">Search</a>
     </nav>
-    <main id="page-content">
+    
+    <main id="page-content" >
         <section>
             <h1>Franklin, Idaho</h1>
             <p id='elev'><strong>Zip: </strong>83237 |&nbsp; <strong>Elevation:&nbsp; </strong><span id='elevation'>1514.246</span> ft. |&nbsp; <strong>Location: &nbsp;</strong>42.07&#176; N, 111.97&#176; W</p>
@@ -55,13 +56,11 @@
                 <p>Gusts:10-12</p>
             </section>
             <section id="summary" class="tile">
-                <h3><strong>Rain</strong></h3>
+                <h3 id='weatherType'></h3>
 
-                <h3>
-                    Summary:Rain
-                </h3>
+                
                 <!-- <img id="rain" src="images/rain.jpg" alt="Image of rain" /> -->
-                <img id='rain' alt="summary picture">
+                <div id='rain'></div>
             </section>
         </section>
         <section id="hourly" class="tile"><strong>Hourly Forcast</strong>
@@ -77,6 +76,7 @@
         &copy; 2019, The Weather Site
     </footer>
     <script src='/weather/js/functions.js'></script>
+    
 </body>
 
 </html>

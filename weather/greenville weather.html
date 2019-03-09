@@ -3,33 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Franklin, ID | Weather Site</title>
+    <title id='page-title'>Franklin, ID | Weather Site</title>
     <meta name="description" content="Short Description of the page.">
     <meta name="viewport" content="width=device-width">
-    <link href="/css/screen.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/weather/css/screen.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 
 <body>
-    <header id="page-header">
+    <header id="pageHeader">
         <img id="logo" src="images/logo.jpeg" alt="Picture of Umbrella" />
         <h1 id="site-brand">The Weather Site</h1>
     </header>
     <nav id="page-nav">
         <a href="#" title="Go to the Weather Site home page">Current</a>
-        <a href="#" title="Get Weather of Franklin">Franklin</a>
+        <a href="/weather/franklin weather.html" title="Get Weather of Franklin">Franklin</a>
         <a href="#" title="Get Weather of Greenville">Greenville</a>
         <a href="#" title="Search">Search</a>
     </nav>
-    <main id="page-content">
+    <section id='status'>Please wait while I get your weather information.</section>
+    <main id="page-content" class='hide'>
         <section>
-            <h1>Franklin, Idaho</h1>
+            <h1 id="locName">Franklin, Idaho</h1>
             <p id='elev'><strong>Zip: </strong>83237 |&nbsp; <strong>Elevation:&nbsp; </strong><span id='elevation'>1514.246</span> ft. |&nbsp; <strong>Location: &nbsp;</strong>42.07&#176; N, 111.97&#176; W</p>
             <!-- <p><strong>Zip:</strong>83237 | <strong>Elevation:</strong><div id ="elevation">4968</div> ft. | <strong>Location:</strong>42.07&deg;N,111.79&deg;W</p> -->
         </section>
         <div id="curWeather"></div>
         <section class="flex-container">
 
-            <section id="temps" class="tile">
+            <section id="curTemp" class="tile">
                 <h3><strong>Temperature</strong></h3>
 
                 <p id="current">40&deg;F</p>
@@ -49,21 +50,17 @@
                   
                 </div>
                 <div class="centered">
-                            <p>5 mph</p>
+                            <p id="windSpeed">5 mph</p>
                 </div>
-                <p>Direction:SW</p>
-                <p>Gusts:10-12</p>
+                <p id="direction">Direction:SW</p>
+                <p id="gusts">Gusts:10-12</p>
             </section>
             <section id="summary" class="tile">
-                <h3><strong>Rain</strong></h3>
+                <h3 id='weatherType'></h3>
 
-                <h3>
-                    Summary:Rain
-                </h3>
+                
                 <!-- <img id="rain" src="images/rain.jpg" alt="Image of rain" /> -->
-                <div id='rain'>
-
-                </div>
+                <div id='rain'></div>
             </section>
         </section>
         <section id="hourly" class="tile"><strong>Hourly Forcast</strong>
@@ -78,7 +75,9 @@
     <footer>
         &copy; 2019, The Weather Site
     </footer>
-    <script src='/js/functions.js'></script>
+    
+    <script src='/weather/js/functions.js'></script>
+    <script src='/weather/js/local.js'></script>
 </body>
-
+ 
 </html>

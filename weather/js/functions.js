@@ -152,16 +152,61 @@ function getCondition(statement) {
     } else if (statement == 'raining' ||
         statement == 'pouring' ||
         statement == 'precipitation' ||
-        statement == 'wet') {
+        statement == 'wet' ||
+        statement == 'rain') {
         condition = 'rain'
         return condition;
-    } else{
+    } else {
         condition = 'clear';
         return condition;
     }
 }
-    //change the summary image function
-    function changeSummaryImage(condition){
-        document.getElementById('rain').setAttribute("class", condition);
-        return 0;
+//change the summary image function
+function changeSummaryImage(condition) {
+    document.getElementById('rain').setAttribute("class", condition);
+    document.getElementById('summary').setAttribute("class", condition);
+    document.getElementById('weatherType').innerHTML = condition;
+    return 0;
+
+}
+
+
+
+// Convert to 12 hour hourly temp
+function format_time(hour) {
+    if (hour > 23) {
+        hour -= 24;
     }
+    let amPM = (hour > 11) ? "pm" : "am";
+    if (hour > 12) {
+        hour -= 12;
+    }
+    if (hour == 0) {
+        hour = "12";
+    }
+    return hour + amPM;
+}
+
+
+
+// Build the hourly temp list
+function buildHourlyData(nextHour, hourlyTemps) {
+    // Data comes from a JavaScript object of hourly temp name - value pairs
+    // Next hour should have a value between 0-23
+    // The hourlyTemps variable holds an array of temperatures
+    // Line 8 builds a list item showing the time for the next hour 
+    // and then the first element (value in index 0) from the hourly temps array
+    let hourlyListItems = '<li>' + format_time(nextHour) + ':' + hourlyTemps[0] + '&deg;F</li>';
+    // Build the rest in a loop
+    for (let i = 1, x = hourlyTemps.length; i < x; i++) {
+        hourlyListItems += '<li>' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + '&deg;F</li>';
+    }
+    console.log('HourlyList is: ' + hourlyListItems);
+    return hourlyListItems;
+}
+
+// Get next hour based on time
+let date = new Date();
+let nextHour = date.getHours() + 1;
+
+

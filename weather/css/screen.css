@@ -99,7 +99,8 @@ footer {
     height: 188px;
     background-size: contain;
     align-self: center;
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
+    margin: auto;
     
 
 }
@@ -161,6 +162,21 @@ footer {
     transform: rotate(270deg)
 }
 
+#summary{
+    height: 500px;
+    border: solid 1px;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.hide{
+    display:none;
+}
 
 /* Mobile First Rules */
 
@@ -178,13 +194,13 @@ footer {
     background-image: url("/weather/weather-images/clear_400.jpg");
 }
 .rain{
-    background-image: url("/weather-images/rain_400.jpg");
+    background-image: url("/weather/weather-images/rain_400.jpg");
 }
 .fog{
     background-image: url("/weather/weather-images/fog_400.jpg");    
 }
 .snow{
-    background-image: url("/weather-images/snow_400.jpg");
+    background-image: url("/weather/weather-images/snow_400.jpg");
 }
 .clouds{
     background-image: url("/weather/weather-images/clouds_400.jpg");
@@ -206,6 +222,7 @@ footer {
 
     .tile {
         padding: 0 125px;
+        /* flex-grow: 1; */
         
     }
 
@@ -234,7 +251,7 @@ footer {
     background-image: url("/weather/weather-images/clear_800.jpg");
 }
 .rain{
-    background-image: url("/weather-images/rain_800.jpg");
+    background-image: url("/weather/weather-images/rain_800.jpg");
 }
 .fog{
     background-image: url("/weather/weather-images/fog_800.jpg");    
