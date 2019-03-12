@@ -10,7 +10,7 @@ const speed = 5;
 buildWC(speed, temp);
 
 // Wind dial call function
-const direction = "ne"; //set your own value
+const direction = "sw"; //set your own value
 windDial(direction);
 
 // Meters function
@@ -22,7 +22,7 @@ console.log("Feet: " + feet);
 setElevation(feet);
 
 //Current conditions function
-const condition = getCondition('clear');
+const condition = getCondition('rain');
 changeSummaryImage(condition);
 
 //  This is to calculate the wind chill
@@ -153,7 +153,9 @@ function getCondition(statement) {
         statement == 'pouring' ||
         statement == 'precipitation' ||
         statement == 'wet' ||
-        statement == 'rain') {
+        statement == 'rain' ||
+        statement == 'rainy'||
+        statement == 'thunderstorms') {
         condition = 'rain'
         return condition;
     } else {

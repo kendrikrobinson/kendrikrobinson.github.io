@@ -80,9 +80,9 @@ function fetchData(weatherURL){
     contentHeading.innerHTML = fullName;
     // The h1 in main h1 should now say "Greenville, SC"
     // Set the temperature information
-    document.getElementById("curTemp").innerHTML = curTemp;
-    document.getElementById("high").innerHTML = high + "&deg;";
-    document.getElementById("low").innerHTML = low + "&deg;";
+    document.getElementById("current").innerHTML = curTemp;
+    document.getElementById("high").innerHTML = "High: " + high;
+    document.getElementById("low").innerHTML = "Low:" + low;
 
     // Set the wind information
     document.getElementById("mph").innerHTML = windSpeed + " mph";
@@ -90,23 +90,24 @@ function fetchData(weatherURL){
     document.getElementById("direction").innerHTML = windDirection;
 
     // Set the current conditions information
-    document.getElementById("current").innerHTML = weather;
+    document.getElementById("weatherType").innerHTML = weather;
     console.log(weather);
 
     // Set the hourly temperature information
-    var ul = document.getElementById("hourlyLI");
+    var ul = document.getElementById("hourly");
     var items = ul.getElementsByTagName("li");
+    console.log(items);
     for (var i = 0; i < items.length; ++i){
         items[i].innerHTML = hourly[i];
     }
 
     // Change the status of the containers
-    pageContent.setAttribute('class', ''); // removes the hide class
-    statusMessage.setAttribute('class', 'hide'); // hides the status container
+    contentContainer.setAttribute('class', ''); // removes the hide class
+    statusContainer.setAttribute('class', 'hide'); // hides the status container
   })
   .catch(function(error){
   console.log('There was a fetch problem: ', error.message);
-  statusMessage.innerHTML ='Sorry, the data could not be processed.';
+  statusContainer.innerHTML ='Sorry, the data could not be processed.';
 })
 }
 
