@@ -27,53 +27,71 @@
             <p id='elev'><strong>Zip: </strong>83237 |&nbsp; <strong>Elevation:&nbsp; </strong><span id='elevation'>1514.246</span> ft. |&nbsp; <strong>Location: &nbsp;</strong>42.07&#176; N, 111.97&#176; W</p>
             <!-- <p><strong>Zip:</strong>83237 | <strong>Elevation:</strong><div id ="elevation">4968</div> ft. | <strong>Location:</strong>42.07&deg;N,111.79&deg;W</p> -->
         </section>
+        <div id="box">
         <div id="curWeather"></div>
         <section class="flex-container">
 
             <section id="temps" class="tile">
-                <h3><strong>Temperature</strong></h3>
+                <h2>Temperature</h2>
 
-                <p id="current">40&deg;F</p>
+                <h3 id="current"><span>40</span>&deg;F</h3>
                 <p><span id="high">64&deg;F</span> <span id="low">41&deg;F</span></p>
-                <p id="feel">Feels Like <span id=feelTemp></span>&deg;F</p>
+                 <p><span> Feels Like</span> <span id=feelTemp></span>&deg;F</p>
 
             </section>
 
 
-            <section id="wind" class="tile">
+            <section  class="tile">
 
-                <h3><strong>Wind</strong></h3>
+                <h2>Wind</h2>
 
                 <div id="dial">
                     
                     <!-- <img src="images/wind-pointer.png" alt="Picture of wind pointer"/> -->
-                  
-                </div><div class="centered">
-                            <p>5 mph</p>
+                  <!-- <div class="centered"> -->
+                      
+                            <p><span id="windSpeed">5 mph</span>   </p>
+                
                 </div>
+                
                 
                 <p>Direction:SW</p>
                 <p>Gusts:10-12</p>
             </section>
             <section id="summary" class="tile">
-                <h3 id='weatherType'></h3>
+                <h2 id='weatherType'> Clear</h2>
 
                 
                 <!-- <img id="rain" src="images/rain.jpg" alt="Image of rain" /> -->
-                <div id='rain'></div>
+                <div id='rain' class= " "></div>
+                <p>Precipitation: 0%</p>
             </section>
+        </div>
         </section>
-        <section id="hourly" class="tile"><strong>Hourly Forcast</strong>
-            <p>10am: 41&deg;F | 11am: 41&deg;F | 12am: 41&deg;F | 1pm: 41&deg;F | 2pm: 41&deg;F | 3pm: 41&deg;F | 4pm:
-                42&deg;F | 5pm: 44&deg;F | 6pm: 44&deg;F | 7pm: 46&deg;F | 8pm: 49&deg;F | 9pm: 51&deg;F | 10pm:
-                55&deg;F</p>
+        <section id="hourly" class="tile">
+            <h2>Hourly Forcast</h2>
+            <ul id="hourly-list">
+                    <li>10am: 41&deg;F |</li>
+                    <li>11am: 41&deg;F |</li>
+                    <li>12pm: 41&deg;F |</li>
+                    <li>1pm: 41&deg;F |</li>
+                    <li>2pm: 41&deg;F |</li>
+                    <li>3pm: 41&deg;F |</li>
+                    <li>4pm: 42&deg;F |</li>
+                    <li>5pm: 44&deg;F |</li>
+                    <li>6pm: 44&deg;F |</li>
+                    <li>7pm: 46&deg;F |</li>
+                    <li>8pm: 49&deg;F |</li>
+                    <li>9pm: 51&deg;F |</li>
+                    <li>10pm: 55&deg;F</li>
+                  </ul>
         </section>
-
+        
 
     </main>
 
     <footer>
-        &copy; 2019, The Weather Site
+        &copy; Kendrik Robinson-2019, The Weather Site
     </footer>
     <script src='/weather/js/functions.js'></script>
     <script src='/weather/js/local.js'></script>

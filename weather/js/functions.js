@@ -22,7 +22,7 @@ console.log("Feet: " + feet);
 setElevation(feet);
 
 //Current conditions function
-const condition = getCondition('rain');
+ condition = getCondition("Clear");
 changeSummaryImage(condition);
 
 //  This is to calculate the wind chill
@@ -166,7 +166,7 @@ function getCondition(statement) {
 //change the summary image function
 function changeSummaryImage(condition) {
     document.getElementById('rain').setAttribute("class", condition);
-    document.getElementById('summary').setAttribute("class", condition);
+    document.getElementById('box').setAttribute("class", condition);
     document.getElementById('weatherType').innerHTML = condition;
     return 0;
 

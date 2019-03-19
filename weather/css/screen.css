@@ -118,7 +118,7 @@ footer {
 }
 
 #dial {
-    position: relative;
+    /* position: relative; */
     height: 150px;
     width: 150px;
     background: no-repeat center/85%url(/weather/images/wind-pointer.png);
@@ -170,13 +170,35 @@ footer {
     width: 100%;
     align-self: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-image: cover;
     
 }
 
 .hide{
     display:none;
 }
+#windSpeed{
+margin: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+#hourly {
+    width: auto;
+  }
+#hourly ul {
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+  ul li {
+    display: inline-block;
+    list-style: none;
+  }
+  #box{
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
 
 /* Mobile First Rules */
 
