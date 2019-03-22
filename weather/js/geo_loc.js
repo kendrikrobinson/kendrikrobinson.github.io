@@ -16,7 +16,7 @@ var idHeader = {
   };
 
 // Call the function
-getGeoLocation();
+// getGeoLocation();
 
 // Gets logitude and latitiude of location
 function getGeoLocation(){
