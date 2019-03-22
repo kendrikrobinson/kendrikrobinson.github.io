@@ -67,7 +67,7 @@ function windDial(direction) {
     const dial = document.getElementById("dial");
     console.log(direction);
 
-    // make sure string is all uppercase
+    // // make sure string is all uppercase
     direction = direction.toUpperCase();
 
 
