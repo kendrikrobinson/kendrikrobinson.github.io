@@ -35,7 +35,7 @@ function getGeoLocation(){
          console.log(`Lat and Long are: ${locale}.`);
             
         //  Call the getLocation function, send locale
-        // getLocation(locale);
+        getLocation(locale);
       
         })
        } else {
