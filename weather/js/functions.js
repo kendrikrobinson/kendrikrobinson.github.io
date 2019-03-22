@@ -254,6 +254,8 @@ function getLocation(locale) {
 
             // Get link to hourly data
             let hourlyLink = data.properties.forecastHourly;
+            console.log('look at me');
+            console.log(hourlyLink);
             getHourly(hourlyLink);
 
             // Get link to weather station ID
