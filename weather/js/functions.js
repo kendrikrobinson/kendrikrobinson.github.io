@@ -136,42 +136,64 @@ function setElevation(feet) {
 
 
 //Function that will change the image based on current conditions
-function getCondition(statement) {
-    statement = statement.toLowerCase();
-    console.log("statement passed to getCondition() is: " + statement);
-    let condition = "";
+    // function getCondition(statement) {
+    //     statement = statement.toLowerCase();
+    //     console.log("statement passed to getCondition() is: " + statement);
+    //     let condition = "";
 
 
-    if (statement == 'cloudy' ||
-        statement == 'overcast' ||
-        statement == 'gloomy') {
-        condition = 'clouds';
-        return condition;
-    } else if (statement == 'snow' ||
-        statement == 'snowing' ||
-        statement == 'flurries') {
-        condition = 'snow';
-        return condition;
-    } else if (statement == 'fog' ||
-        statement == 'foggy' ||
-        statement == 'low visibility') {
-        condition = 'fog';
-        return condition;
+    //     if (statement == 'cloudy' ||
+    //         statement == 'overcast' ||
+    //         statement == 'gloomy') {
+    //         condition = 'clouds';
+    //         return condition;
+    //     } else if (statement == 'snow' ||
+    //         statement == 'snowing' ||
+    //         statement == 'flurries') {
+    //         condition = 'snow';
+    //         return condition;
+    //     } else if (statement == 'fog' ||
+    //         statement == 'foggy' ||
+    //         statement == 'low visibility') {
+    //         condition = 'fog';
+    //         return condition;
 
-    } else if (statement == 'raining' ||
-        statement == 'pouring' ||
-        statement == 'precipitation' ||
-        statement == 'wet' ||
-        statement == 'rain' ||
-        statement == 'rainy' ||
-        statement == 'thunderstorms') {
-        condition = 'rain'
-        return condition;
-    } else {
-        condition = 'clear';
-        return condition;
-    }
-}
+    //     } else if (statement == 'raining' ||
+    //         statement == 'pouring' ||
+    //         statement == 'precipitation' ||
+    //         statement == 'wet' ||
+    //         statement == 'rain' ||
+    //         statement == 'rainy' ||
+    //         statement == 'thunderstorms') {
+    //         condition = 'rain'
+    //         return condition;
+    //     } else {
+    //         condition = 'clear';
+    //         return condition;
+    //     }
+    // }
+
+    function getCondition(phrase) {
+        console.log( 'condition is '+ phrase);
+        let condition = ""
+    
+        if(phrase.includes('cloud')||phrase.includes('overcast')||phrase.includes('Cloud')){
+            condition = 'cloud';
+            return condition ;}
+        else if(phrase.includes('rain')||phrase.includes('wet')||phrase.includes('Rain')||phrase.includes('Thunderstorm')||phrase.includes('Thunderstorms')){
+            condition = 'rain';
+            return condition ;}
+        else if(phrase.includes('fog')||phrase.includes('haze')||phrase.includes('Fog')||phrase.includes('mist')){
+            condition = 'fog';
+            return condition ;}
+        else if(phrase.includes('snow')||phrase.includes('blizzard')||phrase.includes('snow')||phrase.includes('sleet')){
+            condition = 'snow';
+            return condition ;}
+        else{
+            condition = 'clear';
+            return condition
+             ;}                
+        }
 //change the summary image function
 function changeSummaryImage(condition) {
     document.getElementById('rain').setAttribute("class", condition);
