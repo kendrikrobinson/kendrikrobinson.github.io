@@ -3,6 +3,15 @@
  ************************************/
 
 console.log('My javascript is being read');
+// Set global variable for custom header required by NWS API
+var idHeader = {
+    headers: {
+        "User-Agent": "Student Learning Project - rob18012@byui.edu"
+    }
+};
+
+// Setup localStorage
+var storage = window.localStorage;
 
 // Variables for Function use
 const temp = 31;
@@ -22,7 +31,7 @@ console.log("Feet: " + feet);
 setElevation(feet);
 
 //Current conditions function
- condition = getCondition("Clear");
+condition = getCondition("Clear");
 changeSummaryImage(condition);
 
 //  This is to calculate the wind chill
@@ -154,7 +163,7 @@ function getCondition(statement) {
         statement == 'precipitation' ||
         statement == 'wet' ||
         statement == 'rain' ||
-        statement == 'rainy'||
+        statement == 'rainy' ||
         statement == 'thunderstorms') {
         condition = 'rain'
         return condition;
@@ -212,3 +221,267 @@ let date = new Date();
 let nextHour = date.getHours() + 1;
 
 
+
+
+
+
+// ************************************** //
+// FUNCTIONS FROM THE SANDBOX TEST FILES //
+
+// Gets location information from the NWS API
+function getLocation(locale) {
+    const URL = "https://api.weather.gov/points/" + locale;
+    // NWS User-Agent header is second parameter
+
+    // Fetch fucntion
+    fetch(URL, idHeader)
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error("Response not OK.");
+        })
+        .then(function (data) {
+            // Check 
+            console.log("Json object from getLocation function: ");
+            console.log(data);
+            // Store in localstorage
+            storage.setItem("locName", data.properties.relativeLocation.properties.city);
+            storage.setItem("locState", data.properties.relativeLocation.properties.state);
+
+            // Get link to hourly data
+            let hourlyLink = data.properties.forecastHourly;
+            getHourly(hourlyLink);
+
+            // Get link to weather station ID
+            let stationsURL = data.properties.observationStations;
+            // Call getStationId function
+            getStationID(stationsURL);
+        })
+        .catch(error => console.log("There was a getLocation error: ", error))
+}
+
+// Gets weather station list and finds ID
+function getStationID(stationsURL) {
+    fetch(stationsURL, idHeader)
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error("Response not OK.");
+        })
+        .then(function (data) {
+            // Check collected data
+            console.log("From getStationId function:");
+            console.log(data);
+
+
+            // Store station ID and elevation
+            let stationId = data.features[0].properties.stationIdentifier;
+            let stationElevation = data.features[0].properties.elevation.value;
+            // Check
+            console.log("Station and Elevation are " + stationId, stationElevation);
+
+            // Data to localstorage
+            storage.setItem("stationId", stationId);
+            storage.setItem("stationElevation", stationElevation);
+
+            // Request current weather for specific station
+            getWeather(stationId);
+        })
+        .catch(error => console.log("There was a getStationId error: ", error))
+}
+
+
+
+
+
+// Gets current weather information for specific station
+function getWeather(stationId) {
+    // Url for current observation data
+    const URL = "https://api.weather.gov/stations/" + stationId + "/observations/latest";
+
+    fetch(URL, idHeader)
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new ERROR("Response not OK.");
+        })
+        .then(function (data) {
+            // Check data
+            console.log("From getWeather function:");
+            console.log(data);
+
+            // Store weather information 
+            let temperature = data.properties.temperature.value;
+            let curWeather = data.properties.temperature.textDescription;
+            let windGust = data.properties.windGust.value;
+
+
+
+
+            // Local storage
+            storage.setItem("temperature", temperature);
+            storage.setItem("curWeather", curWeather);
+            storage.setItem("windGust", windGust);
+        })
+        .catch(error => console.log("There was a getWeather error: ", error))
+}
+
+function getHourly(hourlyLink) {
+    fetch(hourlyLink)
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error("Response not OK.");
+        })
+        .then(function (data) {
+            // Check 
+            console.log("Json object from getHourly function: ");
+            console.log(data);
+
+            // Store Hourly Information
+            let hourly = [];
+
+            for (let i = 0; i < 13; i++) {
+                hourly[i] = data.properties.periods[i].temperature;
+            }
+
+            // Get  Info
+            let windDirection = data.properties.periods[0].windDirection;
+            let windSpeed = data.properties.periods[0].windSpeed;
+            let temperature = data.properties.periods[0].temperature;
+
+
+
+            // Local Storage
+            storage.setItem("hourly", hourly);
+            storage.setItem("windDirection", windDirection);
+            storage.setItem("windSpeed", windSpeed);
+            storage.setItem("temperature", temperature);
+        })
+        .catch(error => console.log("There was a getHourly error: ", error))
+}
+// End getHourly Function
+
+// getForcast function
+function getForecast(forecastURL) {
+    fetch(forecastURL)
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error("Response not OK.");
+        })
+        .then(function (data) {
+            // Check 
+            console.log("Object from getForecast function: ");
+            console.log(data);
+
+            // Store Forecast information
+            let high = data.properties.periods[0].temperature;
+            let low = data.properties.periods[1].temperature;
+            let icon = data.properties.periods[0].icon;
+            let detailedForecast = data.properties.periods[0].detailedForecast;
+
+            // Local storage
+            storage.setItem("high", high);
+            storage.setItem("low", low);
+            storage.setItem("icon", icon);
+            storage.setItem("detailedForecast", detailedForecast);
+        })
+        .catch(error => console.log("There was a getForecast error: ", error))
+}
+buildPage();
+
+function buildPage() {
+    // Set Head
+    let pageTitle = document.getElementById('pageTitle');
+    // Combine state and city
+    let fullName = storage.getItem("locName") + ", " + storage.getItem("locState");
+    let fullNameNode = document.createTextNode(fullName);
+    // Change title and h1
+    // pageTitle.insertBefore(fullNameNode, pageTitle.childNodes[0]);
+    document.getElementById('locName').innerHTML = fullName;
+    // Wind Dial
+    let gust = storage.getItem("windGust");
+    document.getElementById('gusts').innerHTML= gust;
+    let windS = storage.getItem('windSpeed');
+    document.getElementById('windSpeed').innerHTML = windS;
+    let windD = storage.getItem("WindDirection");
+    document.getElementById("direction").innerHTML = windD;
+    // Weather condition
+    let curW= storage.getItem('curWeather');
+    let cond = getCondition(curW);
+    console.log('Curent Weather Condidtion is:');
+    console.log(getCondition(curW));
+    changeSummaryImage(cond);
+    // Temps
+    let temp = storage.getItem('temperature');
+    tempR =Math.round((convertToFahrenheit(temp))); 
+    document.getElementById('current').innerHTML= tempR + '&#176;' +'F';
+
+    let low = storage.getItem('low');
+    document.getElementById('low').innerHTML = low+ '&#176;' +'F';
+
+    let high = storage.getItem('high');
+    document.getElementById('high').innerHTML = high+ '&#176;' +'F';
+    // Meters to feet Set
+    let eleva = storage.getItem('stationElevation');
+    convertMeters(eleva);
+    console.log('Converted Elevation is:')
+    console.log(convertMeters(eleva));
+    document.getElementById('elevation').innerHTML = convertMeters(eleva)+ ' ft.';
+    //Hourly temps
+    let date = new Date();
+    let nextHour = date.getHours() + 1;
+    let hourlyData = storage.getItem('hourly');
+    hourlyUL.innerHTML = (nextHour, hourlyData);
+    console.log(hourlyUL.innerHTML = (nextHour, hourlyData));
+
+    //WindCHill
+    let speed = storage.getItem('windSpeed');
+   // ALready done above----- let temp = storage.getItem('temperature');
+   let ws = speed.charAt(0);
+    document.getElementById("feelTemp").innerHTML = buildWC(ws, tempR);
+
+    //Latitude and Long
+    let lat = storage.getItem('latitude');
+    let long = storage.getItem('longitude');
+    //sets up values for the directions
+    let latC ='';
+    let longC= '';
+    //rounds the lat and long
+    lat =Math.round(lat*100)/100;
+    long =Math.round(long*100)/100;
+
+    //getting N or s/ e or w
+            // if(Math.sign(lat) == 1){
+            //     latC = "&deg;N, "
+            // }
+            // else{latC = '&deg;S '}
+            // if(Math.sign(long) == 1){
+            //     longC = '&deg;E '
+            // }
+            // else{ longC = '&deg;W '}
+
+            // document.getElementById('logitude').innerHTML = lat +latC+', ' +long +longC;
+            
+
+
+// Celsius to Fahrenheit conversion
+let test = convertToFahrenheit(0);
+console.log('Fahrenheit converted is: ');
+console.log(test);
+
+// Convert to Fahrenheit
+function convertToFahrenheit(temperature) {
+    let c = temperature;
+    let f = (c * (9 / 5) + 32);
+    return f;
+}
+pageContent.setAttribute('class', ''); 
+statusMessage.setAttribute('class', 'hide'); 
+}

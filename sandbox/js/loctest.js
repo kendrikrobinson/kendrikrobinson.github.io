@@ -35,7 +35,7 @@ function getGeoLocation(){
          console.log(`Lat and Long are: ${locale}.`);
             
         //  Call the getLocation function, send locale
-        getGeoLocation(locale);
+        getLocation(locale);
       
         })
        } else {
@@ -69,7 +69,70 @@ function getLocation(locale) {
       let stationsURL = data.properties.observationStations; 
       // Call the function to get the list of weather stations
    
-        // getStationId(stationsURL); 
+        getStationId(stationsURL); 
      }) 
     .catch(error => console.log('There was a getLocation error: ', error)) 
    } // end getLocation function
+
+
+
+
+   // Gets weather station list and the nearest weather station ID from the NWS API
+function getStationId(stationsURL) { 
+  // NWS User-Agent header (built above) will be the second parameter 
+  fetch(stationsURL, idHeader) 
+  .then(function(response){
+    if(response.ok){ 
+     return response.json(); 
+    } 
+    throw new ERROR('Response not OK.');
+  })
+  .then(function (data) { 
+    // Let's see what we got back
+    console.log('From getStationId function:'); 
+    console.log(data);
+  
+    // Store station ID and elevation (in meters - will need to be converted to feet) 
+    let stationId = data.features[0].properties.stationIdentifier; 
+    let stationElevation = data.features[0].properties.elevation.value; 
+    console.log('Station and Elevation are: ' + stationId, stationElevation); 
+ 
+    // Store data to localstorage 
+    storage.setItem("stationId", stationId); 
+    storage.setItem("stationElevation", stationElevation); 
+ 
+    // Request the Current Weather for this station 
+    getWeather(stationId);
+   }) 
+  .catch(error => console.log('There was a getStationId error: ', error)) 
+ } // end getStationId function
+
+
+
+ // Gets current weather information for a specific weather station from the NWS API
+function getWeather(stationId) { 
+  // This is the URL for current observation data 
+  const URL = 'https://api.weather.gov/stations/' + stationId + '/observations/latest';
+  // NWS User-Agent header (built above) will be the second parameter 
+  fetch(URL, idHeader) 
+  .then(function(response){
+    if(response.ok){ 
+     return response.json(); 
+    } 
+    throw new ERROR('Response not OK.');
+  })
+  .then(function (data) { 
+    // Let's see what we got back
+    console.log('From getWeather function:'); 
+    console.log(data);
+  
+    // Store weather information to localStorage 
+ 
+ 
+    // Build the page for viewing 
+    
+   }) 
+  .catch(error => console.log('There was a getWeather error: ', error)) 
+ } // end getWeather function
+
+  

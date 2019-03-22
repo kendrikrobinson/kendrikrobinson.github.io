@@ -8,23 +8,25 @@
     <meta name="viewport" content="width=device-width">
     <link href="/weather/css/screen.css" rel="stylesheet" type="text/css" media="screen">
 </head>
-
+<!-- People we Worked with -->
+<!-- 1.Victoria -->
+<!-- 2.Nicholas -->
 <body>
     <header id="pageHeader">
         <img id="logo" src="images/logo.jpeg" alt="Picture of Umbrella" />
         <h1 id="site-brand">The Weather Site</h1>
     </header>
     <nav id="page-nav">
-        <a href="/weather/index.html">Current</a>
+        <a href="#" title="Go to the Weather Site home page">Current</a>
         <a href="/weather/franklin weather.html" title="Get Weather of Franklin">Franklin</a>
-        <a href="#" title="Get Weather of Greenville">Greenville</a>
+        <a href="/weather/greenville weather.html">Greenville</a>
         <a href="#" title="Search">Search</a>
     </nav>
-    <section id='status'>Please wait while I get your weather information.</section>
-    <main id="page-content" class='hide'>
+    <section id='statusMessage'>Please wait while I get your weather information.</section>
+    <main id="pageContent" class='hide'>
         <section>
             <h1 id="locName">Franklin, Idaho</h1>
-            <p id='elev'><strong>Zip: </strong><span id="zip">83237</span> |&nbsp; <strong>Elevation:&nbsp; </strong><span
+            <p id='elev'><strong>Zip: </strong><span id="zip">None</span> |&nbsp; <strong>Elevation:&nbsp; </strong><span
                     id='elevation'>1514.246</span>
                 ft. |&nbsp; <strong>Location: &nbsp;</strong><span id="longitude">42.07</span>&#176; N,<span id="latitude">
                     111.97</span>&#176; W</p>
@@ -64,10 +66,10 @@
                 <h2 id='weatherType'></h2>
                 <!-- <img id="rain" src="images/rain.jpg" alt="Image of rain" /> -->
                 <div id='rain' class= " "></div>
-                <p>Preciptation: 45%</p>
+                <p>Preciptation: 0%</p>
             </section>
         </div>
-        </section>
+    
         <section id="hourly" class="tile">
             <h2>Hourly Forcast</h2>
             <ul id="hourlyUL">
@@ -96,7 +98,7 @@
     </footer>
 
     <script src='/weather/js/functions.js'></script>
-    <script src='/weather/js/local.js'></script>
+    <script src='/weather/js/geo_loc.js'></script>
 </body>
 
 </html>
