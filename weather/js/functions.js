@@ -137,7 +137,7 @@ function setElevation(feet) {
 
 //Function that will change the image based on current conditions
     function getCondition(statement) {
-        statement = statement.toLowerCase();
+        // statement = statement.toLowerCase();
         console.log("statement passed to getCondition() is: " + statement);
         let condition = "";
 
