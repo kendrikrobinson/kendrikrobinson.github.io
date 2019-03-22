@@ -449,7 +449,7 @@ function buildPage() {
     //WindCHill
     let speed = storage.getItem('windSpeed');
    // ALready done above----- let temp = storage.getItem('temperature');
-   let ws = windS.charAt(0);
+   let ws = speed.charAt(0);
     document.getElementById("feelTemp").innerHTML = buildWC(ws, tempR);
 
     //Latitude and Long
