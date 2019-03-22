@@ -143,6 +143,7 @@ function setElevation(feet) {
 
 
         if (statement == 'cloudy' ||
+            statement == 'Cloud' ||
             statement == 'overcast' ||
             statement == 'gloomy') {
             condition = 'clouds';
