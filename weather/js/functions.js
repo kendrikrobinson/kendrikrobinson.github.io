@@ -479,7 +479,7 @@ function buildPage() {
     let speed = storage.getItem('windSpeed');
    // ALready done above----- let temp = storage.getItem('temperature');
    let ws = speed.charAt(0);
-    document.getElementById("feelTemp").innerHTML = buildWC(windS, curTemp);
+    document.getElementById("feelTemp").innerHTML = buildWC(ws, curTemp);
     console.log("WindChill is: ")
 
     
