@@ -8,12 +8,12 @@ var storage = window.localStorage;
 
 
 'use strict';
-// Set global variable for custom header required by NWS API
-var idHeader = {
-    headers: {
-      "User-Agent": "Student Learning Project - rob18012@byui.edu"
-    }
-  };
+// // Set global variable for custom header required by NWS API
+// var idHeader = {
+//     headers: {
+//       "User-Agent": "Student Learning Project - rob18012@byui.edu"
+//     }
+//   };
 
 // Call the function
 // getGeoLocation();
