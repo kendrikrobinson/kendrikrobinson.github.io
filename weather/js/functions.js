@@ -447,9 +447,9 @@ function buildPage() {
 
 
     // Temps
-    let temp = storage.getItem('temperature');
-    tempR =Math.round((convertToFahrenheit(temp))); 
-    document.getElementById('current').innerHTML= tempR + '&#176;' +'F';
+    let curTemp = storage.getItem('temperature');
+    curTemp =Math.round((convertToFahrenheit(curTemp))); 
+    document.getElementById('current').innerHTML= curTemp + '&#176;' +'F';
 
     let low = storage.getItem('low');
     document.getElementById('low').innerHTML = low+ '&#176;' +'F';
@@ -479,7 +479,8 @@ function buildPage() {
     let speed = storage.getItem('windSpeed');
    // ALready done above----- let temp = storage.getItem('temperature');
    let ws = speed.charAt(0);
-    document.getElementById("feelTemp").innerHTML = buildWC(ws, tempR);
+    document.getElementById("feelTemp").innerHTML = buildWC(windS, curTemp);
+    console.log("WindChill is: ")
 
     
 
