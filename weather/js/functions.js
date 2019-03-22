@@ -37,7 +37,7 @@ setElevation(feet);
 //  This is to calculate the wind chill
 function buildWC(speed, temp) {
 
-    const feelTemp = document.getElementById("feelTemp")
+    // const feelTemp = document.getElementById("feelTemp")
 
     // Compute wind chill
     let wc = 35.74 + 0.6215 * temp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * temp * Math.pow(speed, 0.16);
@@ -137,15 +137,15 @@ function setElevation(feet) {
 
 //Function that will change the image based on current conditions
     function getCondition(statement) {
-        // statement = statement.toLowerCase();
+        statement = statement.toLowerCase();
         console.log("statement passed to getCondition() is: " + statement);
         let condition = "";
 
 
         if (statement == 'cloudy' ||
-            statement == 'Cloud' ||
+            statement == 'cloud' ||
             statement == 'overcast' ||
-            statement == 'gloomy') {
+            statement == 'clouds') {
             condition = 'clouds';
             return condition;
         } else if (statement == 'snow' ||
@@ -258,6 +258,10 @@ function getLocation(locale) {
             console.log(hourlyLink);
             getHourly(hourlyLink);
 
+            // ForecastURL
+            let forecastURL = data.properties.forecast;
+            getForecast(forecastURL);
+
             // Get link to weather station ID
             let stationsURL = data.properties.observationStations;
             // Call getStationId function
@@ -320,7 +324,7 @@ function getWeather(stationId) {
 
             // Store weather information 
             let temperature = data.properties.temperature.value;
-            let curWeather = data.properties.temperature.textDescription;
+            let curWeather = data.properties.textDescription;
             let windGust = data.properties.windGust.value;
 
 
@@ -373,7 +377,7 @@ function getHourly(hourlyLink) {
 
 // getForcast function
 function getForecast(forecastURL) {
-    fetch(forecastURL)
+    fetch(forecastURL, idHeader)
         .then(function (response) {
             if (response.ok) {
                 return response.json();
@@ -403,26 +407,45 @@ buildPage();
 
 function buildPage() {
     // Set Head
-    let pageTitle = document.getElementById('pageTitle');
+    let pageTitle = document.getElementById('page-title');
     // Combine state and city
     let fullName = storage.getItem("locName") + ", " + storage.getItem("locState");
     let fullNameNode = document.createTextNode(fullName);
     // Change title and h1
-    // pageTitle.insertBefore(fullNameNode, pageTitle.childNodes[0]);
+    pageTitle.insertBefore(fullNameNode, pageTitle.childNodes[0]);
     document.getElementById('locName').innerHTML = fullName;
     // Wind Dial
-    let gust = storage.getItem("windGust");
+    let gust = storage.getItem("windGust") + ' mph';
     document.getElementById('gusts').innerHTML= gust;
     let windS = storage.getItem('windSpeed');
     document.getElementById('windSpeed').innerHTML = windS;
-    let windD = storage.getItem("WindDirection");
+    let windD = storage.getItem("windDirection");
     document.getElementById("direction").innerHTML = windD;
-    // Weather condition
-    let curW= storage.getItem('curWeather');
-    let cond = getCondition(curW);
-    console.log('Curent Weather Condidtion is:');
-    console.log(getCondition(curW));
-    changeSummaryImage(cond);
+    windDial(windD);
+
+
+    // // Weather condition
+    // let curW= storage.getItem('curWeather');
+    // let cond = getCondition(curW);
+    // console.log('Curent Weather Condidtion is:');
+    // console.log(getCondition(curW));
+    // changeSummaryImage(cond);
+
+     // SET WEATHER INFORMATION
+     let curWeather = storage.getItem("curWeather");
+     // Set summary title
+     document.getElementById("weatherType").innerHTML = curWeather;
+     // Set summary image
+     let summary = getCondition(curWeather);
+     changeSummaryImage(summary);
+     // Test
+     console.log("Weather description is: " + curWeather);
+
+
+
+
+
+
     // Temps
     let temp = storage.getItem('temperature');
     tempR =Math.round((convertToFahrenheit(temp))); 
@@ -446,11 +469,21 @@ function buildPage() {
     hourlyUL.innerHTML = (nextHour, hourlyData);
     console.log(hourlyUL.innerHTML = (nextHour, hourlyData));
 
+    // Detailed Forecast
+            let df = storage.getItem("detailedForecast");
+            document.getElementById('cast').innerHTML= df
+
+
+// Wind Information
     //WindCHill
     let speed = storage.getItem('windSpeed');
    // ALready done above----- let temp = storage.getItem('temperature');
    let ws = speed.charAt(0);
     document.getElementById("feelTemp").innerHTML = buildWC(ws, tempR);
+
+    
+
+    
 
     //Latitude and Long
     let lat = storage.getItem('latitude');
@@ -462,17 +495,17 @@ function buildPage() {
     lat =Math.round(lat*100)/100;
     long =Math.round(long*100)/100;
 
-    //getting N or s/ e or w
-            // if(Math.sign(lat) == 1){
-            //     latC = "&deg;N, "
-            // }
-            // else{latC = '&deg;S '}
-            // if(Math.sign(long) == 1){
-            //     longC = '&deg;E '
-            // }
-            // else{ longC = '&deg;W '}
+    // getting N or s/ e or w
+    //         if(Math.sign(lat) == 1){
+    //             latC = "&deg;N, "
+    //         }
+    //         else{latC = '&deg;S '}
+    //         if(Math.sign(long) == 1){
+    //             longC = '&deg;E '
+    //         }
+    //         else{ longC = '&deg;W '}
 
-            // document.getElementById('logitude').innerHTML = lat +latC+', ' +long +longC;
+    //         document.getElementById('logitude').innerHTML = lat +latC+', ' +long +longC;
             
 
 
