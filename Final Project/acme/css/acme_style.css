@@ -1,0 +1,276 @@
+/* This is the stylesheet for the ACME Website */
+
+/* Table of contents
+    1.Imports
+    2.General Rules
+    3.Mobile first
+    4.Large Screen */
+
+/* Imports */
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+/* General Rules */
+body{
+    font-family: 'Nunito', sans-serif;
+    background-image: url("/acme/images/site/background.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+nav{background-color: #de2226;
+    color: #ffffff;
+    line-height:4em;
+
+}
+
+#nav-links{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    list-style: none;
+    font-size: 1.5em;
+    
+}
+#white-box{
+    background:#ffffff;
+    
+}
+
+footer{
+    border-top: solid black 5px;
+    
+}
+
+.cyote{
+    width:100%;
+
+    position: relative;
+}
+
+
+#rocket_info ul {
+    float:right;
+    position: absolute;
+    z-index: 1000;
+    top:350px;
+    left:60%;
+    list-style: none;
+   
+    color: #990033;
+}
+#food{
+    display:flex;
+    flex-flow: column;
+    width: 70px;
+}
+#meals{
+    display:flex;
+    flex-flow: row;
+    
+
+}
+li{
+    font-size:20px;
+}
+
+main{
+    padding:1em;
+}
+
+figure img{
+    height: 100px;
+}
+
+figcaption{
+    background-color: #ffffff;
+    text-align: center;
+    width: 100%;
+    height: 40px; 
+}
+
+
+
+#recipes{
+    display: flex;
+    flex-wrap: wrap; 
+     
+}
+
+figure{
+    width: 30%;
+    
+}
+
+
+
+figure img{
+    border-color:lightgray;
+    border-style: solid;
+    border-left-width: 20px;
+    border-right-width: 20px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    width:auto;
+    
+}
+footer {
+    padding: 3px;
+    border-top: 5px solid #000000;  
+    text-align: center;
+    margin-top: 10px;
+}
+
+    
+
+.hide{
+    display: none;
+}
+#featureHeader{
+    color: #990033;
+    margin: 0;
+}
+
+
+
+@media screen and (max-width:750px){
+    h2{
+        font-size: 35px;
+    }  
+
+    h3{
+        font-size: 27px;
+        padding-top: 5px;
+        margin: 0;
+    }
+    /* #rockets{
+        display: flex;
+        flex-direction: column;
+    } */
+    #rocket_info{
+        font-size:.5em;
+        position: absolute;
+        z-index: 1000;
+        left:70%;
+        top: 35%;
+        line-height: 300%;
+        color:#990033;
+        flex-wrap: nowrap;
+        transform: scale(.25);
+        }
+        #featureHeader{
+            font-size: 4em;
+        }
+        food_info{
+            width:100%;
+        }
+        #item{
+            font-size:1em;
+    
+        }
+        #itemPicture{
+            padding:20px;
+            height:40%;
+            width:40%
+            
+            
+            
+        }
+        #itemHeader{
+            font-size: 3em;
+            padding-left: 10px;
+        }
+        #itemList{
+            list-style:none;
+            font-size:2em;
+        }
+        #description{
+            font-size:2em;
+            padding:20px;
+        }
+        #price{
+            color:#de2226;
+            font-size:3em;
+            font-weight:bolder;
+            padding:20px;
+        }
+       
+            
+       
+    
+        
+    
+           
+    
+    
+
+
+}
+
+
+@media screen and (min-width: 751px) {
+
+ 
+    #rocket_info{
+        font-size:3em;
+    line-height: 60%;
+    left:50%;
+    top:0%;
+    }
+    #featureHeader{
+        font-size: 1em;
+    }
+    #food_info{
+        width:50%;
+    }
+    
+    figure img{
+        width:40%;
+    }
+   #figcaption{
+       text-align: center;
+   }
+   #module{
+       display:flex;
+       flex-direction: row-reverse;
+   }
+   #rockets{
+       width:50%;
+   }
+
+   /* Other Pages */
+  #itemPicture{
+       padding:20px;
+       width:50%;
+       
+   }
+   #item{
+       font-size:1em;
+   }
+   #itemHeader{
+       font-size: 3em;
+       padding-left: 10px;
+   }
+   #itemList{
+       list-style:none;
+       font-size:2em;
+   }
+   #description{
+       font-size:2em;
+       padding:20px;
+   }
+   #price{
+       color:#de2226;
+       font-size:3em;
+       font-weight:bolder;
+       padding:20px;
+   }
+   #store{
+       display:flex;
+       flex-direction: row;
+   }
+   
+    
+
+
+}
